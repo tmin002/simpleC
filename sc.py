@@ -171,6 +171,5 @@ if run_after:
     mkrundir()
     print('\033[0;32m[Program started]\033[0;0m')
     result = os.system('cd ./pwd; ../output.bin')
-    print('\033[0;%dm[Program terminated with exit code %d]\033[0;0m' % 
-    (32 if result == 0 else 31, result))
+    print('\033[0;%dm[Program terminated]\033[0;0m' % (32 if result == 0 else 31))
 scexit(0)
