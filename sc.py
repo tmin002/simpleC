@@ -140,7 +140,7 @@ for arg in file_args:
         if isfile(arg):
             addfiletolist(arg, src_path)
         elif isdir(arg):
-                usage(1)
+            usage(1)
         else:
             scexit('no such file or directory.')
     else:
