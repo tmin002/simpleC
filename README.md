@@ -31,4 +31,4 @@ Cd to your C/C++ project directory, then
 
  Compile helloworld.txt that has C code in it, and run output after compile:
 
-     ./sc -sr helloworld.txt
+     ./sc -sdr helloworld.txt
