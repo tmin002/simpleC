@@ -35,10 +35,10 @@ def exec(cmd, printcmd=True, exitiferr=True):
 
 def mktmpdir():
     rmtmpdir()
-    os.mkdir('.sctmp')
+    os.mkdir('obj')
 def rmtmpdir():
-    if pathlib.Path('.sctmp').is_dir():
-        shutil.rmtree('.sctmp')
+    if pathlib.Path('obj').is_dir():
+        shutil.rmtree('obj')
 
 def mkrundir():
     if not os.path.exists('pwd'):
@@ -69,9 +69,9 @@ def readdir(path):
 def buildobj(path):
     basename = os.path.basename(path)
     debugstr = '-g' if debug_mode else ''
-    exec('gcc %s -c -o \"./.sctmp/%s.o\" \"%s\"' % (debugstr, basename, path))
+    exec('gcc %s -o \"./obj/%s.o\" \"%s\"' % (debugstr, basename, path))
 def linkobj(output):
-    exec('gcc -o \"%s\" ./.sctmp/*' % output)
+    exec('gcc -o \"%s\" ./obj/*' % output)
 
 def addfiletolist(path, lst):
     if endswithc(path) or skip_ex:
@@ -165,7 +165,7 @@ for sc in src_path:
 linkobj('output.bin')
 
 # Check and exit
-rmtmpdir()
+# rmtmpdir()
 if run_after:
     scprint('Executing..')
     mkrundir()
