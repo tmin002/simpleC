@@ -9,7 +9,8 @@ Cd to your C/C++ project directory, then
 
   1. You can type ./sc -h to get command usage.
   2. sc will generate output.bin as a compile result. (Sadly you cannot change its name)
-  3. sc will create a folder named 'pwd' when executing output.bin using -r option. That folder will be the program's working directory.
+  3. sc will create a folder named 'obj' when compiling with -d option. That folder is required for debugger to debug properly. 
+  4. sc will create a folder named 'pwd' when executing output.bin using -r option. That folder will be the program's working directory.
   
 ## Examples
 

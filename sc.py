@@ -69,7 +69,7 @@ def readdir(path):
 def buildobj(path):
     basename = os.path.basename(path)
     debugstr = '-g' if debug_mode else ''
-    exec('gcc %s -o \"./obj/%s.o\" \"%s\"' % (debugstr, basename, path))
+    exec('gcc %s -c -o \"./obj/%s.o\" \"%s\"' % (debugstr, basename, path))
 def linkobj(output):
     exec('gcc -o \"%s\" ./obj/*' % output)
 
@@ -165,7 +165,8 @@ for sc in src_path:
 linkobj('output.bin')
 
 # Check and exit
-# rmtmpdir()
+if not debug_mode:
+    rmtmpdir()
 if run_after:
     scprint('Executing..')
     mkrundir()
