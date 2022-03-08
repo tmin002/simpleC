@@ -165,7 +165,8 @@ for sc in src_path:
 linkobj('output.bin')
 
 # Check and exit
-# rmtmpdir()
+if not debug_mode:
+    rmtmpdir()
 if run_after:
     scprint('Executing..')
     mkrundir()
